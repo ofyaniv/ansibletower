@@ -4,4 +4,4 @@
     message: "Hello World!"
   tasks:
     - name: with_sequence -> loop
-      ansible.builtin.command: test1.cmd
+      local_action: command test1.cmd
