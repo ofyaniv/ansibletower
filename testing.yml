@@ -1,0 +1,5 @@
+- name: with_sequence -> loop
+  ansible.builtin.debug:
+    msg: "{{ 'testuser%02x' }}"
+  # range is exclusive of the end point
+  loop: "{{ range(0, 10002, 1) }}"
