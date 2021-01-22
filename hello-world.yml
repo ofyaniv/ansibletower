@@ -1,5 +1,9 @@
-- name: with_sequence -> loop
-  ansible.builtin.debug:
-    msg: "{{ 'testuser%02x' }}"
-  # range is exclusive of the end point
-  loop: "{{ range(0, 10002, 1) }}"
+- name: Hello World Sample
+  hosts: all
+  vars:
+    message: "Hello World!"
+  tasks:
+    - name: with_sequence -> loop
+      debug:
+        msg: "{{ message }}"
+      loop: "{{ range(0, 10002, 1) }}"
