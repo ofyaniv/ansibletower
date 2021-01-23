@@ -1,7 +1,6 @@
-- name: Hello World Sample
-  hosts: all
-  vars:
-    message: "Hello World!"
+---
+
+- hosts: all
   tasks:
-    - name: with_sequence -> loop
-      local_action: command test1.cmd
+  - name: Hello yourself
+    script: test.sh
