@@ -1,6 +1,8 @@
----
-
-- hosts: all
+- name: Hello World Sample
+  hosts: all
+  vars:
+    message: "Hello World!"
   tasks:
-  - name: Hello yourself
-    script: test.sh
+    - name: Hello Message
+      debug:
+        msg: "{{ message }}"
