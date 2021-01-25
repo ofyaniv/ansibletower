@@ -4,3 +4,9 @@
   tasks:
   - name: Hello yourself
     script: test.sh
+  
+  - name: Debug hello
+    debug: var=hello
+
+  - name: Debug hello.stdout as part of a string
+    debug: "msg=The script's stdout was `{{ hello.stdout }}`."  
