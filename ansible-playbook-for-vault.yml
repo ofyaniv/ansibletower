@@ -1,7 +1,7 @@
 - name: Clone private git repo using ansible vault
   hosts: all
   become: true
-  vars_file:
+  vars_files:
     - test-vault.yml
   tasks:
     - name: Clone a repo
