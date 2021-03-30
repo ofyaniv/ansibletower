@@ -1,0 +1,10 @@
+- name: Clone private git repo using ansible vault
+  hosts: all
+  become: true
+  vars_file:
+    - test-vault.yml
+  tasks:
+    - name: Clone a repo
+      git:
+        repo:  https://{{ GIT_USERNAME }}:{{ GIT_PASS }}github.gwd.broadcom.net/ESD/gradle-testing-plugin.git
+        dest: /home/ansible-vault-test
