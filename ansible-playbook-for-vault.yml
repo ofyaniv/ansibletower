@@ -1,5 +1,8 @@
 - name: Print secret message from encrypted vault file
   hosts: all
+  become: true
+  vars_files:
+    - test-vault.yml
   tasks:
     - name: Secret Message
       debug:
