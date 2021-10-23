@@ -14,12 +14,6 @@
         body:
               "{\"status\":\"RUNNING\"}"
         status_code: 200
-
-
-    - name: Confirm that 200 OK response is returned
-      uri:
-        url: "https://www.ynet.co.il/home/0,7340,L-8,00.html"
-        status_code: 200
         
     - name: Wait for HTTP 200 or 401
       uri:
