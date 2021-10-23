@@ -25,5 +25,5 @@
       retries: 30
       delay: 5
       register: result
-      until: result['json']['status'] != 'RUNNING'
+      until: result['status'] != 'RUNNING'
       changed_when: false
