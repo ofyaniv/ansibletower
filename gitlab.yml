@@ -17,7 +17,10 @@
         
     - name: Wait for HTTP 200 or 401
       uri:
-        url: https://example.com/
+        url: "https://cddirector.io/cdd/execution/00000000-0000-0000-0000-000000000000/v1/releases-execution/1/phases-execution/1"
+        method: GET
+        headers:
+              Authorization: "Bearer eyJhbGciOiJIUzUxMiJ9.eyJ1c2VybmFtZSI6Im9mZXIueWFuaXZAYnJvYWRjb20ub2t0YS5jb20iLCJ0ZW5hbnRJZCI6IjAwMDAwMDAwLTAwMDAtMDAwMC0wMDAwLTAwMDAwMDAwMDAwMCIsInVzZXJJZCI6NiwianRpIjoiNmQwNzk1OTMtMTYzMC00OGRkLWFlOWMtMGU2NWE5NTEzYzY1IiwiZXhwIjoxNjQyNzg0MTMwfQ.J9WVLEs4a800vhl9iSQd8ZXQf4-LRxPPirtJvbTAf4zTqARyfwOEg_bcaxGNeFB_dyjLiTQUEImlgs6brYWgMQ"
         status_code: 200,401
       retries: 30
       delay: 5
