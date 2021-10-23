@@ -25,4 +25,4 @@
       retries: 30
       delay: 5
       register: result
-      until: result.json.status != 'RUNNING'
+      until: result.json.data.status != 'RUNNING'
