@@ -12,7 +12,7 @@
               Content-Type: "application/json"
         body_format: json
         body:
-              host: "{\"status\":\"RUNNING\"}"
+              "{\"status\":\"RUNNING\"}"
         status_code: 200
 
 
