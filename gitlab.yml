@@ -20,3 +20,13 @@
       uri:
         url: "https://www.ynet.co.il/home/0,7340,L-8,00.html"
         status_code: 200
+        
+    - name: Wait for HTTP 200 or 401
+      uri:
+        url: https://example.com/
+        status_code: 200,401
+      retries: 30
+      delay: 5
+      register: result
+      until: result.failed is defined
+      changed_when: false
