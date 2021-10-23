@@ -2,7 +2,11 @@
 
 - hosts: all
   tasks:
-
+    - name: Confirm that 200 OK response is returned
+      uri:
+        url: "https://www.ynet.co.il/home/0,7340,L-8,00.html"
+        status_code: 200
+        
     - name: Confirm that 503 Unavailable response is returned
       uri:
         url: "http://ibndev003773.bpc.broadcom.net:8080/cdd/execution/00000000-0000-0000-0000-000000000000/v1/releases-execution/316/phases-execution/1757"
@@ -15,7 +19,4 @@
               host: '{"status":"RUNNING"}'
         status_code: 200
 
-    - name: Confirm that 200 OK response is returned
-      uri:
-        url: "https://www.ynet.co.il/home/0,7340,L-8,00.html"
-        status_code: 200
+
