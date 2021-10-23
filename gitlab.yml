@@ -11,7 +11,7 @@
               Authorization: "Bearer eyJhbGciOiJIUzUxMiJ9.eyJ1c2VybmFtZSI6InN1cGVydXNlckBjYS5jb20iLCJ0ZW5hbnRJZCI6IjAwMDAwMDAwLTAwMDAtMDAwMC0wMDAwLTAwMDAwMDAwMDAwMCIsInVzZXJJZCI6MSwianRpIjoiMzY2OTkxOGUtODc2NC00YWMxLTkwMDItMjU4MzQ2ZmE5MGZlIiwiZXhwIjoxNjQyNzgxMzQzfQ.vizqh8PrDqXiUQ6i-7mF2VCiufVdGH6q_d-_KcsYDsU2tY1krvwNdlEMw8Nzf5_z7f2B7t9jPQ0l-UNYne4dYQ"
         body_format: json
         body:
-              host: "{"status":"RUNNING"}"
+              host: '{"status":"RUNNING"}'
         status_code: 200
 
     - name: Confirm that 200 OK response is returned
