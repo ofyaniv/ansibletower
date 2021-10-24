@@ -10,8 +10,8 @@
         headers:
               Content-Type: "application/json"
         body_format: json
-        register: pipeline_trigger
         status_code: 200
+      register: pipeline_trigger
         
     - name: Wait for HTTP 200 or 401
       uri:
