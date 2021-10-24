@@ -14,16 +14,11 @@
         body_format: json
         status_code: 201
       register: pipeline_trigger
-      
-    - name: Set fact for subsequent job templates
-      set_stats:
-        data:
-          pipeline_id: "{{ pipeline_trigger.json.id }}"
-          
+
     - name: change var value
       set_fact:
         pipeline_id: "{{ pipeline_trigger.json.id }}"
-        
+
     - name: Wait for HTTP 200 or 401
       uri:
         url: "https://gitlab.com/api/v4/projects/30714152/pipelines/{{ pipeline_id }}"
@@ -34,9 +29,4 @@
       retries: 30
       delay: 5
       register: pipeline
-      #until: pipeline.json.status != 'running'
- 
-    - name: Print return information from the previous task
-      ansible.builtin.debug:
-        var: pipeline
-    
+      until: pipeline.json.status != 'running'
