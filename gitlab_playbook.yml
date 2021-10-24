@@ -1,11 +1,8 @@
 ---
-
 - hosts: all
   vars: 
       gitlab_service: "https://gitlab.com"
-      pipeline_id: ""
   tasks:
-
     - name: Create a new pipeline for Mobile IT project
       uri:
         url: "{{ gitlab_service }}/api/v4/projects/{{ gitlab_project_id }}/trigger/pipeline?token={{ gitlab_trigger_token }}&ref={{ gitlab_branch }}"
@@ -15,10 +12,6 @@
         body_format: json
         status_code: 201
       register: pipeline_trigger
-
-    - name: Store pipeline id
-      set_fact:
-        pipeline_id: "{{ pipeline_trigger.json.id }}"
 
     - name: Wait for pipeline final status
       uri:
