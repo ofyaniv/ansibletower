@@ -1,7 +1,8 @@
 ---
 
 - hosts: all
-  vars: pipeline_id: ""
+  vars: 
+      pipeline_id: ""
   tasks:
 
     - name: Confirm that 503 Unavailable response is returned
