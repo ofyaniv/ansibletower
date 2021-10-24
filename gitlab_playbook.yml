@@ -8,7 +8,7 @@
 
     - name: Create a new pipeline for Mobile IT project
       uri:
-        url: "{{ gitlab_service }}/api/v4/projects/{{ gitlab_project_id }}/trigger/pipeline?token=17120b92c3536102fb9c76619c9d68&ref=main"
+        url: "{{ gitlab_service }}/api/v4/projects/{{ gitlab_project_id }}/trigger/pipeline?token={{ gitlab_trigger_token }}&ref=main"
         method: POST
         headers:
               Content-Type: "application/json"
@@ -25,7 +25,7 @@
         url: "{{ gitlab_service }}/api/v4/projects/{{ gitlab_project_id }}/pipelines/{{ pipeline_id }}"
         method: GET
         headers:
-              PRIVATE-TOKEN: "pC_Khq5KX7o-254x15E6"
+              PRIVATE-TOKEN: "{{ gitlab_personal_access_token }}"
         status_code: 200
       retries: 17280
       delay: 5
