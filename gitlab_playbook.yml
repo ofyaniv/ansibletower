@@ -16,7 +16,7 @@
     - name: Set fact for subsequent job templates
       set_stats:
         data:
-          pipeline_id: {% raw %}"{{ pipeline_trigger.json.id }}"{% endraw %}
+          pipeline_id: "{{ pipeline_trigger.json.id }}"
         
     - name: Wait for HTTP 200 or 401
       uri:
