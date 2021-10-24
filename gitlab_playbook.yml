@@ -15,7 +15,7 @@
         
     - name: Wait for HTTP 200 or 401
       uri:
-        url: "https://gitlab.com/api/v4/projects/30714152/pipelines/394283909"
+        url: "https://gitlab.com/api/v4/projects/30714152/pipelines/pipeline_trigger.json.id"
         method: GET
         headers:
               PRIVATE-TOKEN: "pC_Khq5KX7o-254x15E6"
