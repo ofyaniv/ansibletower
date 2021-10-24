@@ -3,6 +3,7 @@
 - hosts: all
   vars: 
       pipeline_id: ""
+      gitlab_project_id: ""
   tasks:
 
     - name: Create a new pipeline for Mobile IT project
