@@ -26,7 +26,7 @@
         headers:
               PRIVATE-TOKEN: "pC_Khq5KX7o-254x15E6"
         status_code: 200
-      retries: 30
+      retries: 17280
       delay: 5
       register: pipeline
-      until: pipeline.json.status != 'running'
+      until: pipeline.json.status != 'running' and pipeline.json.status != 'pending' and pipeline.json.status != 'waiting_for_resource' and pipeline.json.status != 'preparing'
