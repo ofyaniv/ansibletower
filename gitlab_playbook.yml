@@ -10,7 +10,7 @@
         headers:
               Content-Type: "application/json"
         body_format: json
-        status_code: 200
+        status_code: 201
       register: pipeline_trigger
         
     - name: Wait for HTTP 200 or 401
