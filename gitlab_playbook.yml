@@ -22,7 +22,7 @@
 
     - name: Wait for pipeline final status
       uri:
-        url: "{{ gitlab_service }}/api/v4/projects/{{ gitlab_project_id }}/pipelines/{{ pipeline_id }}"
+        url: "{{ gitlab_service }}/api/v4/projects/{{ gitlab_project_id }}/pipelines/{{ pipeline_trigger.json.id }}"
         method: GET
         headers:
               PRIVATE-TOKEN: "{{ gitlab_personal_access_token }}"
