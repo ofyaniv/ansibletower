@@ -19,6 +19,10 @@
       set_stats:
         data:
           pipeline_id: "{{ pipeline_trigger.json.id }}"
+          
+    - name: change var value
+      set_fact:
+        pipeline_id: "{{ pipeline_trigger.json.id }}"
         
     - name: Wait for HTTP 200 or 401
       uri:
