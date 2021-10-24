@@ -5,7 +5,7 @@
       pipeline_id: ""
   tasks:
 
-    - name: Confirm that 503 Unavailable response is returned
+    - name: Create a new pipeline for Mobile IT project
       uri:
         url: "https://gitlab.com/api/v4/projects/30714152/trigger/pipeline?token=17120b92c3536102fb9c76619c9d68&ref=main"
         method: POST
@@ -15,11 +15,11 @@
         status_code: 201
       register: pipeline_trigger
 
-    - name: change var value
+    - name: Store pipeline id
       set_fact:
         pipeline_id: "{{ pipeline_trigger.json.id }}"
 
-    - name: Wait for HTTP 200 or 401
+    - name: Wait for pipeline final status
       uri:
         url: "https://gitlab.com/api/v4/projects/30714152/pipelines/{{ pipeline_id }}"
         method: GET
