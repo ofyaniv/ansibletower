@@ -30,4 +30,9 @@
       retries: 30
       delay: 5
       register: pipeline
-      until: pipeline.json.status != 'running'
+ # until: pipeline.json.status != 'running'
+ 
+    - name: Print return information from the previous task
+        ansible.builtin.debug:
+          var: pipeline
+    
