@@ -2,12 +2,13 @@
 
 - hosts: all
   vars: 
+      gitlab_service: "https://gitlab.com"
       pipeline_id: ""
   tasks:
 
     - name: Create a new pipeline for Mobile IT project
       uri:
-        url: "https://gitlab.com/api/v4/projects/{{ gitlab_project_id }}/trigger/pipeline?token=17120b92c3536102fb9c76619c9d68&ref=main"
+        url: "{{ gitlab_service }}/api/v4/projects/{{ gitlab_project_id }}/trigger/pipeline?token=17120b92c3536102fb9c76619c9d68&ref=main"
         method: POST
         headers:
               Content-Type: "application/json"
@@ -21,7 +22,7 @@
 
     - name: Wait for pipeline final status
       uri:
-        url: "https://gitlab.com/api/v4/projects/{{ gitlab_project_id }}/pipelines/{{ pipeline_id }}"
+        url: "{{ gitlab_service }}/api/v4/projects/{{ gitlab_project_id }}/pipelines/{{ pipeline_id }}"
         method: GET
         headers:
               PRIVATE-TOKEN: "pC_Khq5KX7o-254x15E6"
