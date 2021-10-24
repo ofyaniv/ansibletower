@@ -1,6 +1,7 @@
 ---
 
 - hosts: all
+  vars: pipeline_id: ""
   tasks:
 
     - name: Confirm that 503 Unavailable response is returned
@@ -19,7 +20,6 @@
           pipeline_id: "{{ pipeline_trigger.json.id }}"
         
     - name: Wait for HTTP 200 or 401
-      var: pipeline_id 
       uri:
         url: https://gitlab.com/api/v4/projects/30714152/pipelines/"{{ pipeline_id }}"
         method: GET
