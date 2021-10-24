@@ -7,9 +7,9 @@
       uri:
         url: "{{ gitlab_service }}/api/v4/projects/{{ gitlab_project_id }}/trigger/pipeline?token={{ gitlab_trigger_token }}&ref={{ gitlab_branch }}"
         method: POST
-        headers:
-              Content-Type: "application/json"
-        body_format: json
+        body_format: form-multipart
+        body:
+              variables[CUSTOM_TRIGGER]: "YES"
         status_code: 201
       register: pipeline_trigger
 
