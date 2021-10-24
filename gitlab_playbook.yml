@@ -33,6 +33,6 @@
  # until: pipeline.json.status != 'running'
  
     - name: Print return information from the previous task
-        ansible.builtin.debug:
-          var: pipeline
+      ansible.builtin.debug:
+        var: pipeline
     
