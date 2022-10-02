@@ -8,7 +8,6 @@ spec:
     apiVersion:    apps/v1                  
     kind:          StatefulSet              
     name:          masking                  
-    envSourceContainerName: masking         
   pollingInterval:    30
   minReplicaCount:    1
   maxReplicaCount:    36
