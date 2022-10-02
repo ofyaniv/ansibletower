@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: masking
+spec:
+  replicas: 1
+  serviceName: masking
+  template:
+    spec:
+      containers:
+        - name: masking
+          lifecycle:
+            preStop:
+              exec:
+                command: ['/opt/tdm/bin/wait_for_running_masking_tasks.sh']
+      terminationGracePeriodSeconds: 864000
