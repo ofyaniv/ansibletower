@@ -1,0 +1,20 @@
+kind: ScaledObject
+apiVersion: keda.sh/v1alpha1
+metadata:
+  name: masking
+  namespace: tdm
+spec:
+  scaleTargetRef:
+    apiVersion:    apps/v1                  
+    kind:          StatefulSet              
+    name:          masking                  
+    envSourceContainerName: masking         
+  pollingInterval:    30
+  minReplicaCount:    1
+  maxReplicaCount:    36
+  advanced:
+    restoreToOriginalReplicaCount: true
+  triggers:
+  - type: external
+    metadata:
+      scalerAddress: tdm.eastus2.cloudapp.azure.com:50051
